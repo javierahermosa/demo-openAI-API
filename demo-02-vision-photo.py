@@ -54,65 +54,33 @@ def generate_caption(_prompt, _image):
 
 if __name__ == '__main__':
 
-    # Image of kids at the lake
-    # prompt = "What’s in this image?"
-    # image = "image.png"
+    # Image Description: useful for captioning
+    image = "lake.png"
+    prompt = "What’s in this image?"
 
-    # Hand written note:
-    #prompt = "What is written in this note? What could it be about? Transcribe, translate, and explain the note."
+    # Reding the text from an image containing a handwritten note
+    image = "handwritten_note_et.jpeg"
+    #image = "handwritten_note_et_90d.jpeg"
+    prompt = "What’s in this image?"
 
-    # image = "note_wit.jpg"
-    #image = "summary Nikolas.jpg"
-    #
-    image = 'fridge.jpg'
+    # Reading the text from an image containing a note written by a child
+    image = "handwritten_child.jpg"
+    prompt = "What is written in this note? What could it be about? Transcribe, translate, and explain the note."
+
+    # Reading a doctor's handwriting
+    image = 'handwritten_doctor.jpg'
+    prompt = "What is written in this note? Transcript and translate if not in english. \
+              Explain what it could be about. What's your opinion about this handwriting?"
+
+    # Retrieving elements from an image and creating something new
+    image = 'fridge.jpeg'
+    prompt = "what do you see in my fridge?
     prompt = "what do you see in my fridge? List everything you see. Hint: we are vegetarians and have diabetes." \
-              "Suggest a meal that I can cook with these ingredients."
+               "Suggest a meal that I can cook with these ingredients."
 
-    #
-    # image = 'doctors_writing.jpg'
-    # prompt = "What is written in this note? Transcript and translate if not in english. \
-    #           Explain what it could be about. What's your opinion about this font?"
-    #
-    # image = 'paper_p1.jpg'
-    # prompt = "What is in the image? Can you transcribe the text and summarize it?"
+    # Reading and translating a scientific paper from a magazine
+    image = 'medical_article_p1.jpeg'
+    prompt = "What is in the image? Can you transcribe the text and summarize it?"
 
     response = generate_caption(prompt, image)
     pprint(response['choices'][0]['message']['content'])
-
-
-
-# Response to harry potter note
-# ("The note is written in German, and it appears to be a child's writing "
-#  'exercise or a creative story. Here is the transcription and translation to '
-#  'English:\n'
-#  '\n'
-#  'Transcription (with corrections to spelling mistakes where context allows):\n'
-#  'Kapitel drei\n'
-#  'Harry ging zum Einkaufen.\n'
-#  '\n'
-#  'Danach gingen sie zum See.\n'
-#  "In einem Tag hat Harry Potter's Geburtstag.\n"
-#  'Harry hatte sich um Auto keine Geduld ge-\n'
-#  'macht Harry fand es nicht\n'
-#  'toll dass es so nach\n'
-#  'Seetang roch. Es regnete. Es war\n'
-#  'kalt. Und es war zu unruhig\n'
-#  'glaubte er. Es war gefährlich. Und\n'
-#  'Buuuum. Ein Riese.\n'
-#  '\n'
-#  'Translation:\n'
-#  'Chapter three\n'
-#  'Harry went shopping.\n'
-#  '\n'
-#  'Afterwards, they went to the lake.\n'
-#  "In one day is Harry Potter's birthday.\n"
-#  'Harry had no patience for the car.\n'
-#  "Harry didn't think it was\n"
-#  'great that it smelled so much like\n'
-#  'seaweed. It was raining. It was\n'
-#  'cold. And it was too restless\n'
-#  'he believed. It was dangerous. And\n'
-#  'Boom. A giant.\n'
-#  '\n'
-#  "The content suggests that this might be a child's own interpretation or a "
-#  'small fan fiction of the "Harry Potter" series.')
