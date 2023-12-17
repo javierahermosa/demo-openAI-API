@@ -16,7 +16,6 @@ def api_call(_prompt):
         ],
         temperature=0
     )
-
     _response = completion.choices[0].message.content
     return _response
 
