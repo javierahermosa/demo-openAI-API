@@ -1,7 +1,6 @@
 """
 This program uses the OPENAI API to classify news articles and obtain the answer in JSON format
 """
-
 from openai import OpenAI
 import pprint
 
@@ -16,7 +15,8 @@ def api_call(_prompt, _article):
             {"role": "user", "content": _article}
         ],
         response_format={"type": "json_object"},
-        temperature=0
+        temperature=0,
+        seed=123
     )
 
     _response = completion.choices[0].message.content
@@ -59,7 +59,6 @@ if __name__ == '__main__':
                     to make it happen.
                     """
 
-
     article_finance = """
                     An interesting shift can be seen when we analyze the breakdown in market capitalization terms. 
                     Our database has a total market capitalization of an impressive USD 13.7 trillion and,
@@ -75,15 +74,7 @@ if __name__ == '__main__':
                 to read 'Zeffie' but I don't like how the 'Z' looks on that font, it looks like an L! 
                 """
 
-    prompt = """
-            You are a text classifier. Your response should be a single word describing the topic of the article.
-            The topic can be either sports, finance, mortgages, sustainability, pensions, investing. 
-            If the article does not properly match any of these topics, your response should be 'unknown'.
-            """
-
-    response = api_call(prompt, article_sustainability)
-
-    # JSON RESPONSE
+    # Classify an article text into given categories but using a JSON response
     prompt_json = """
                 You are a text classifier. Your response should have four elements including the 
                 topic of the article, a summary of the article, a set of tags suitable to the article 
@@ -95,6 +86,7 @@ if __name__ == '__main__':
                 The summary can be a maximum of 200 words. 
                 
                 Also suggest 3 tags for the article. Tags should be sub-topics not equal to the topic.
+                
                 The sentiment should be either positive, negative, or neutral.
                 
                 The resulting JSON object should be in this format:
@@ -102,5 +94,5 @@ if __name__ == '__main__':
                 'article_sentiment':'string'}].
                 """
 
-    #response = api_call(prompt_json, article_sustainability)
+    response = api_call(prompt_json, article_sports)
     pprint.pprint(response, compact=True)

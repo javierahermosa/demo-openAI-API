@@ -16,10 +16,10 @@ def generate_caption(_prompt, _image):
             return base64.b64encode(image_file.read()).decode('utf-8')
 
     # Path to your image
-    image_path = f"images/{_image}"
+    _image_path = f"media/{_image}"
 
     # Getting the base64 string
-    base64_image = encode_image(image_path)
+    base64_image = encode_image(_image_path)
 
     headers = {
         "Content-Type": "application/json",
@@ -59,28 +59,28 @@ if __name__ == '__main__':
     prompt = "What’s in this image?"
 
     # Reding the text from an image containing a handwritten note
-    image = "handwritten_note_et.jpeg"
-    #image = "handwritten_note_et_90d.jpeg"
-    prompt = "What’s in this image?"
+    # image = "handwritten_note_et.jpeg"
+    # image = "handwritten_note_et_90d.jpeg"
+    # prompt = "What’s in this image?"
 
     # Reading the text from an image containing a note written by a child
-    image = "handwritten_child.jpg"
-    prompt = "What is written in this note? What could it be about? Transcribe, translate, and explain the note."
+    # image = "handwritten_child.jpg"
+    # prompt = "What is written in this note? What could it be about? Transcribe, translate, and explain the note."
 
     # Reading a doctor's handwriting
-    image = 'handwritten_doctor.jpg'
-    prompt = "What is written in this note? Transcript and translate if not in english. \
-              Explain what it could be about. What's your opinion about this handwriting?"
+    # image = 'handwritten_doctor.jpg'
+    # prompt = "What is written in this note? Transcript and translate if not in english. \
+    #           Explain what it could be about. What's your opinion about this handwriting?"
 
     # Retrieving elements from an image and creating something new
-    image = 'fridge.jpeg'
-    prompt = "what do you see in my fridge?
-    prompt = "what do you see in my fridge? List everything you see. Hint: we are vegetarians and have diabetes." \
-               "Suggest a meal that I can cook with these ingredients."
+    #image = 'fridge.jpeg'
+    #prompt = "what do you see in my fridge?"
+    # prompt = "what do you see in my fridge? List everything you see. Hint: we are vegetarians and have diabetes." \
+    #            "Suggest a meal that I can cook with these ingredients."
 
     # Reading and translating a scientific paper from a magazine
-    image = 'medical_article_p1.jpeg'
-    prompt = "What is in the image? Can you transcribe the text and summarize it?"
+    # image = 'medical_article_p1.jpeg'
+    # prompt = "What is in the image? Can you transcribe the text and summarize it?"
 
     response = generate_caption(prompt, image)
     pprint(response['choices'][0]['message']['content'])
