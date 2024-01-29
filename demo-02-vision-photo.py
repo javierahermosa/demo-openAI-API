@@ -73,8 +73,8 @@ if __name__ == '__main__':
     #           Explain what it could be about. What's your opinion about this handwriting?"
 
     # Retrieving elements from an image and creating something new
-    #image = 'fridge.jpeg'
-    #prompt = "what do you see in my fridge?"
+    # image = 'fridge.jpeg'
+    # #prompt = "what do you see in my fridge?"
     # prompt = "what do you see in my fridge? List everything you see. Hint: we are vegetarians and have diabetes." \
     #            "Suggest a meal that I can cook with these ingredients."
 

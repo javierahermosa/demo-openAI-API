@@ -1,5 +1,5 @@
 """
-Basic completions example including JSON output
+Basic completions example
 """
 from openai import OpenAI
 
@@ -18,7 +18,7 @@ def api_call(_system_prompt, _user_prompt):
         temperature=0,
         seed=123,
         #stream=True    # sent partial answers back
-        #response_format={"type": "json_object"},
+        #response_format = {"type": "json_object"},
     )
     _response = completion.choices[0].message.content
     return _response
@@ -33,6 +33,3 @@ if __name__ == '__main__':
     response = api_call(system_prompt, user_prompt)
     print(response)
 
-#------ saved jokes-----
-# And remember, in a galaxy far, far away, the only thing that moves faster than light is the weekend!
-# But remember, no matter how much Star Wars content there is, Yoda one that I'm here to help with!
