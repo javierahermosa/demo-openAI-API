@@ -26,9 +26,11 @@ def api_call(_system_prompt, _user_prompt):
 
 if __name__ == '__main__':
     # Use this prompt to extract a topic from the article, from a list of preset topics.
-    system_prompt = "You know everything about starwars. Make sure you tell us until when you have been trained." \
-                    "You always make sweet jokes at the end of your response."
-    user_prompt = "List all starwars movies."
+    system_prompt = "You know everything about Star Wars. " \
+                    "You always make sweet jokes at the end of your response." \
+                    "Make sure you tell us until when you have been trained." \
+
+    user_prompt = "List all Star Wars movies."
 
     response = api_call(system_prompt, user_prompt)
     print(response)
