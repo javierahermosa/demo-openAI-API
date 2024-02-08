@@ -11,6 +11,7 @@ import time
 from openai import OpenAI
 
 
+# Transcribe
 def api_call_transcribe(_audio_input):
     from openai import OpenAI
     client = OpenAI()
@@ -26,6 +27,7 @@ def api_call_transcribe(_audio_input):
     return _transcript
 
 
+# Translate
 def api_call_translate(_audio_input):
     from openai import OpenAI
     client = OpenAI()
@@ -40,6 +42,7 @@ def api_call_translate(_audio_input):
     return _transcript_translated
 
 
+# Generate Audio
 def generate_audio(_transcript):
     client = OpenAI()
 
@@ -59,13 +62,15 @@ if __name__ == '__main__':
     sound_file.play()
 
     # 2. Create a transcript of the audio file
-    transcript_txt = api_call_transcribe(audio_file)
-    pprint.pprint(transcript_txt, compact=True)
+    # print('TRANSCRIPTION:')
+    # transcript_txt = api_call_transcribe(audio_file)
+    # pprint.pprint(transcript_txt, compact=True)
 
     # 3. Create a translation of the audio file & audio
+    # print('TRANSLATION:')
     # translation_txt = api_call_translate(audio_file)
     # pprint.pprint(translation_txt, compact=True)
-    #
+
     # output_audio_file = "audio_output_translation.mp3"
     # audio = generate_audio(translation_txt)
     # audio.stream_to_file(f"media/{output_audio_file}")
