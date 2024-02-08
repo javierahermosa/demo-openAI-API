@@ -17,7 +17,6 @@ def api_call(_system_prompt, _user_prompt):
         ],
         temperature=0,
         seed=123,
-        #stream=True    # sent partial answers back
         #response_format = {"type": "json_object"},
     )
     _response = completion.choices[0].message.content

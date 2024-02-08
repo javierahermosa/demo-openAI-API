@@ -46,11 +46,11 @@ if __name__ == '__main__':
     response = api_call_generate_image(prompt, size, quality)
 
     # Editing an image using a mask - Kids at the lake
-    prompt_edit_image = 'A beautiful picture of a lake. There are no people.'
-    #prompt_edit_image = 'A beautiful picture of a lake. There are no people. Only a flamingo on the shore.'
-    image = "lake.png"
-    mask = "lake_mask.png"
-    response = api_call_edit_image(prompt_edit_image, image, mask, size)
+    # prompt_edit_image = 'A beautiful picture of a lake. There are no people.'
+    # #prompt_edit_image = 'A beautiful picture of a lake. There are no people. Only a flamingo on the shore.'
+    # image = "lake.png"
+    # mask = "lake_mask.png"
+    # response = api_call_edit_image(prompt_edit_image, image, mask, size)
     #
 
     #Editing an image using a mask - Bride & brother-in-law

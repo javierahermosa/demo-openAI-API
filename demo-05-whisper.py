@@ -56,19 +56,20 @@ if __name__ == '__main__':
     # 1.  We have recorded an audio file in German, let's listen
     audio_file = "no_more_starwars_german.mp3"
     sound_file = vlc.MediaPlayer(f"media/{audio_file}")
-    #sound_file.play()
+    sound_file.play()
 
     # 2. Create a transcript of the audio file
     transcript_txt = api_call_transcribe(audio_file)
     pprint.pprint(transcript_txt, compact=True)
 
     # 3. Create a translation of the audio file & audio
-    translation_txt = api_call_translate(audio_file)
-    pprint.pprint(translation_txt, compact=True)
+    # translation_txt = api_call_translate(audio_file)
+    # pprint.pprint(translation_txt, compact=True)
+    #
+    # output_audio_file = "audio_output_translation.mp3"
+    # audio = generate_audio(translation_txt)
+    # audio.stream_to_file(f"media/{output_audio_file}")
+    # sound_file = vlc.MediaPlayer(f"media/{output_audio_file}")
+    # sound_file.play()
 
-    output_audio_file = "audio_output_translation.mp3"
-    audio = generate_audio(translation_txt)
-    audio.stream_to_file(f"media/{output_audio_file}")
-    sound_file = vlc.MediaPlayer(f"media/{output_audio_file}")
-    sound_file.play()
     time.sleep(200)
